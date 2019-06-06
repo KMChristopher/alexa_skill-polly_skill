@@ -1,0 +1,45 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "polly",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "Amazon.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "Amazon.LaunchIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "CrackerIntent",
+          "samples": [
+            "Polly, want a cracker"
+          ]
+        },
+        {
+          "name": "RepeatIntent",
+          "samples": [
+            "Polly, repeat after me {RepeatWords}",
+            "Polly, echo {RepeatWords}"
+          ],
+          "slots": [
+            {
+              "name": "RepeatWords",
+              "type": "AMAZON.AMAZON.SearchQuery",
+              "samples": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
