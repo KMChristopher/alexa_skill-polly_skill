@@ -14,7 +14,7 @@ var CancelOrStopIntent = {
         handlerInput.requestEnvelope.request.intent.name === 'StopIntent')
   },
   handle(handlerInput) {
-    var responseText = 'Thank you for using Polly. Have a great day!'
+    var responseText = 'Thank you for using Polly. Have a great day, friend!' //KMC: added "friend" 
 
     return handlerInput.responseBuilder
       .speak(responseText)
