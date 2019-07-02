@@ -2,7 +2,7 @@ var Alexa = require('ask-sdk-core')
 var axios = require('axios')
 
 function getKanyeQuote() {
-  return axios.get('https://api.kanye.rest').then(function (response) {
+  return axios.get('https://api.kanye.rest').then(function (response) { //KMC: I think I need to change something here ...
     return response.data.quote
   })
 }
@@ -14,7 +14,7 @@ var CancelOrStopIntent = {
         handlerInput.requestEnvelope.request.intent.name === 'StopIntent')
   },
   handle(handlerInput) {
-    var responseText = 'Thank you for using Polly. Have a great day!'
+    var responseText = 'Thank you for using Polly. Have a great day!' //KMC: I think I need to change something here ...
 
     return handlerInput.responseBuilder
       .speak(responseText)
@@ -22,13 +22,13 @@ var CancelOrStopIntent = {
   }
 }
 
-var CrackerIntentHandler = {
+var CrackerIntentHandler = { //KMC: I think I need to change something here ...
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest' &&
-      handlerInput.requestEnvelope.request.intent.name === 'CrackerIntent'
+      handlerInput.requestEnvelope.request.intent.name === 'CrackerIntent' //KMC: I think I need to change something here ...
   },
   handle(handlerInput) {
-    return getKanyeQuote().then(function (quote) {
+    return getKanyeQuote().then(function (quote) { //KMC: I think I need to change something here ...
       return handlerInput.responseBuilder
         .speak(quote)
         .getResponse()
@@ -41,7 +41,7 @@ var LaunchIntentHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    var responseText = 'Welcome to Polly! You can ask Polly to repeat after you to have your words echoed back.'
+    var responseText = 'Welcome to Polly! You can ask Polly to repeat after you to have your words echoed back.' //KMC: I think I need to change something here ...
 
     return handlerInput.responseBuilder
       .speak(responseText)
@@ -55,7 +55,7 @@ var HelpIntentHandler = {
       handlerInput.requestEnvelope.request.intent.name === 'HelpIntent'
   },
   handle(handlerInput) {
-    var responseText = 'You can say "Polly, repeat after me" and Polly will echo what you say back to you.'
+    var responseText = 'You can say "Polly, repeat after me" and Polly will echo what you say back to you.' //KMC: I think I need to change something here ...
 
     return handlerInput.responseBuilder
       .speak(responseText)
@@ -79,8 +79,8 @@ var ErrorHandler = {
   canHandle() { return true },
   handle(handlerInput, error) {
     return handlerInput.responseBuilder
-      .speak('Sorry, I can\'t understand the command. Please say again.')
-      .reprompt('Sorry, I can\'t understand the command. Please say again.')
+      .speak('Sorry, I can\'t understand the command. Please say again.') //KMC: I think I need to change something here ...
+      .reprompt('Sorry, I can\'t understand the command. Please say again.') //KMC: I think I need to change something here ...
       .getResponse()
   }
 }
